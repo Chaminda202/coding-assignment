@@ -11,3 +11,7 @@
  4.
  d. Implement enum class to achieve this
  
+ B.
+  3.
+   b. implement Animal and SwimAction interfaces
+ 
