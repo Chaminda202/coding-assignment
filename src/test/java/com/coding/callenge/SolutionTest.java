@@ -1,5 +1,6 @@
 package com.coding.callenge;
 
+import com.coding.callenge.enume.SoundEnum;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
@@ -39,6 +40,8 @@ public class SolutionTest {
     void whenFly() {
         new Duck().fly();
         assertThat(outContent.toString(), containsString("I am flying"));
+        new Parrot().fly();
+        assertThat(outContent.toString(), containsString("I am flying"));
     }
 
     @Disabled
@@ -49,11 +52,19 @@ public class SolutionTest {
 
     @Test
     void whenSpeak() {
-        new Duck().speak("Quack, quack");
+        new Duck().speak(SoundEnum.DUCK);
         assertThat(outContent.toString(), containsString("Quack, quack"));
-        new Chicken().speak("Cluck, cluck");
+        new Chicken().speak(SoundEnum.CHICKEN);
         assertThat(outContent.toString(), containsString("Cluck, cluck"));
-        new Rooster().speak("Cock-a-doodle-doo");
+        new Rooster().speak(SoundEnum.ROOSTER);
+        assertThat(outContent.toString(), containsString("Cock-a-doodle-doo"));
+
+        new Parrot().speak(SoundEnum.DOG);
+        assertThat(outContent.toString(), containsString("Woof, woof"));
+        new Parrot().speak(SoundEnum.CAT);
+        assertThat(outContent.toString(), containsString("Meow"));
+        new Parrot().speak(SoundEnum.ROOSTER);
         assertThat(outContent.toString(), containsString("Cock-a-doodle-doo"));
     }
+
 }

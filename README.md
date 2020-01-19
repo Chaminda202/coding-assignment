@@ -7,3 +7,7 @@
 3. 
  b. Rooster is a sub type of Chicken
  c. can implement animal and extend bird, changes types accordingly.
+ 
+ 4.
+ d. Implement enum class to achieve this
+ 
