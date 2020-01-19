@@ -67,4 +67,9 @@ public class SolutionTest {
         assertThat(outContent.toString(), containsString("Cock-a-doodle-doo"));
     }
 
+    @Test
+    void whenSwim() {
+        new Fish().swim();
+        assertThat(outContent.toString(), containsString("I am swimming"));
+    }
 }
