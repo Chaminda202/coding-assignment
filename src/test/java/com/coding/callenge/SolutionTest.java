@@ -43,6 +43,8 @@ public class SolutionTest {
         assertThat(outContent.toString(), containsString("I am flying"));
         new Parrot().fly();
         assertThat(outContent.toString(), containsString("I am flying"));
+        new Butterfly().fly();
+        assertThat(outContent.toString(), containsString("I am flying"));
     }
 
     @Disabled
@@ -66,6 +68,8 @@ public class SolutionTest {
         assertThat(outContent.toString(), containsString("Meow"));
         new Parrot().speak(SoundEnum.ROOSTER);
         assertThat(outContent.toString(), containsString("Cock-a-doodle-doo"));
+        new Butterfly().speak(SoundEnum.BUTTERFLY);
+        assertThat(outContent.toString(), containsString(""));
     }
 
     @Test

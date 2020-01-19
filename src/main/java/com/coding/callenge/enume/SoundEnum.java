@@ -6,6 +6,7 @@ public enum SoundEnum {
     ROOSTER("Cock-a-doodle-doo"),
     DOG("Woof, woof"),
     CAT("Meow"),
+    BUTTERFLY(""),
     DEFAULT("I am singing");
 
     private String sound;
