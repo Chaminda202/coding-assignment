@@ -1,4 +1,4 @@
 package com.coding.callenge;
 
-interface Animal {
+public interface Animal {
 }

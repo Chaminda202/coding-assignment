@@ -1,6 +1,7 @@
 package com.coding.callenge;
 
 import com.coding.callenge.enume.SoundEnum;
+import com.coding.callenge.service.ActionCountService;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Disabled;
@@ -99,4 +100,33 @@ public class SolutionTest {
         new Clownfish().makeJoke();
         assertThat(outContent.toString(), containsString("I make jokes"));
     }
+
+    @Test
+    void checkActionCount() {
+        Animal[] animals = new Animal[]{
+                new Bird(),
+                new Duck(),
+                new Chicken(),
+                new Rooster(),
+                new Parrot(),
+                new Fish(),
+                new Shark(),
+                new Clownfish(),
+                new Dolphin(),
+                new Frog(),
+                new Dog(),
+                new Butterfly(),
+                new Cat()
+        };
+        ActionCountService service = new ActionCountService();
+        service.actionCount(animals);
+
+        assertEquals(service.canFlyCount(),3);
+        assertEquals(service.canWalkCount(), 8);
+        assertEquals(service.canSingCount(),9);
+        assertEquals(service.canSwimCount(), 5);
+
+
+    }
+
 }
