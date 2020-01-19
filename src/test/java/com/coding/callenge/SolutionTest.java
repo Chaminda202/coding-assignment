@@ -11,6 +11,7 @@ import java.io.PrintStream;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.StringContains.containsString;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SolutionTest {
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
@@ -71,5 +72,25 @@ public class SolutionTest {
     void whenSwim() {
         new Fish().swim();
         assertThat(outContent.toString(), containsString("I am swimming"));
+    }
+
+    @Test
+    void whenSize() {
+        assertEquals(new Shark().size(), "large");
+        assertEquals(new Clownfish().size(), "small");
+    }
+
+    @Test
+    void whenColour() {
+        assertEquals(new Shark().color(), "grey");
+        assertEquals(new Clownfish().color(), "orange");
+    }
+
+    @Test
+    void whenJokeOrEat() {
+        new Shark().eatOtherFish();
+        assertThat(outContent.toString(), containsString("I eat other fish"));
+        new Clownfish().makeJoke();
+        assertThat(outContent.toString(), containsString("I make jokes"));
     }
 }

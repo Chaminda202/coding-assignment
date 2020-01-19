@@ -8,4 +8,12 @@ public class Fish implements Animal, SwimAction {
     public void swim() {
       System.out.println(Message.SWIM);
     }
+
+    public String size() {
+        return null;
+    }
+
+    public String color() {
+        return null;
+    }
 }
