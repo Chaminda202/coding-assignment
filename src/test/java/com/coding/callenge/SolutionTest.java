@@ -31,6 +31,8 @@ public class SolutionTest {
         assertThat(outContent.toString(), containsString("I am walking"));
         new Chicken().walk();
         assertThat(outContent.toString(), containsString("I am walking"));
+        new Rooster().walk();
+        assertThat(outContent.toString(), containsString("I am walking"));
     }
 
     @Test
@@ -50,6 +52,8 @@ public class SolutionTest {
         new Duck().speak("Quack, quack");
         assertThat(outContent.toString(), containsString("Quack, quack"));
         new Chicken().speak("Cluck, cluck");
-        assertThat(outContent.toString(), containsString("Quack, quack"));
+        assertThat(outContent.toString(), containsString("Cluck, cluck"));
+        new Rooster().speak("Cock-a-doodle-doo");
+        assertThat(outContent.toString(), containsString("Cock-a-doodle-doo"));
     }
 }
