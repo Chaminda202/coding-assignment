@@ -2,6 +2,7 @@ package com.coding.callenge;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
@@ -25,20 +26,30 @@ public class SolutionTest {
     }
 
     @Test
-    void whenBirdWalk() {
-        new Bird().walk();
+    void whenWalk() {
+        new Duck().walk();
+        assertThat(outContent.toString(), containsString("I am walking"));
+        new Chicken().walk();
         assertThat(outContent.toString(), containsString("I am walking"));
     }
 
     @Test
-    void whenBirdFly() {
-        new Bird().fly();
+    void whenFly() {
+        new Duck().fly();
         assertThat(outContent.toString(), containsString("I am flying"));
     }
 
+    @Disabled
     @Test
-    void whenBirdSing() {
-        new Bird().sing();
-        assertThat(outContent.toString(), containsString("I am singing"));
+    void whenSing() {
+
+    }
+
+    @Test
+    void whenSpeak() {
+        new Duck().speak("Quack, quack");
+        assertThat(outContent.toString(), containsString("Quack, quack"));
+        new Chicken().speak("Cluck, cluck");
+        assertThat(outContent.toString(), containsString("Quack, quack"));
     }
 }
